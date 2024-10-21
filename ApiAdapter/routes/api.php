@@ -9,7 +9,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::prefix('v1')->group(function() {
-    // Route::apiResource('/employees', EmployeeController::class);
     Route::controller(EmployeeController::class)->group(function () {
         Route::get('/employees', 'index');
         Route::post('/employees', 'store');
